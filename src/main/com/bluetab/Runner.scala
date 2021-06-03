@@ -1,5 +1,6 @@
-package main.com.bluetab
+package main.bluetab
 
+import main.com.bluetab.entity.{Cocinero, Papa}
 import main.com.bluetab.exercise.{Logic, Reader}
 
 object Runner {
@@ -8,8 +9,7 @@ object Runner {
   val logic = new Logic
 
   def main(args: Array[String]): Unit = {
-    println("Hello world")
-
+    println("Hello from main of object")
     val ciudadesCsv = reader.readCsvColumn("src/test/resources/ciudades.csv", true)
     for (row <- ciudadesCsv){
       var line = ""
@@ -18,7 +18,6 @@ object Runner {
       }
       println(line.trim)
     }
-
     val cities = logic.getUpperCities(ciudadesCsv)
     cities.foreach(println(_))
 
@@ -28,6 +27,13 @@ object Runner {
     val totalWomen = logic.getTotalWomen(ciudadesCsv)
     println(s"el total de mujeres es: $totalWomen")
 
+    val cocinero = new Cocinero
+    cocinero.cortar(new Papa)
+    cocinero.pelar(new Papa)
+
+    //comentario line
+
+    /*bloque*/
   }
 
 }
