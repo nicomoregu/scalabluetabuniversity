@@ -1,6 +1,5 @@
 package main.bluetab
 
-import main.com.bluetab.entity.{Cocinero, Papa}
 import main.com.bluetab.exercise.{Logic, Reader}
 
 object Runner {
@@ -26,14 +25,6 @@ object Runner {
 
     val totalWomen = logic.getTotalWomen(ciudadesCsv)
     println(s"el total de mujeres es: $totalWomen")
-
-    val cocinero = new Cocinero
-    cocinero.cortar(new Papa)
-    cocinero.pelar(new Papa)
-
-    //comentario line
-
-    /*bloque*/
   }
 
 }
